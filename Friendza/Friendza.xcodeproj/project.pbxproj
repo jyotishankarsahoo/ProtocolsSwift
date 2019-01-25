@@ -17,6 +17,7 @@
 		84B5933E21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5933D21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift */; };
 		84B5934021FAE367007A8CB7 /* TopNavBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */; };
 		84B5934321FAE5A7007A8CB7 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */; };
+		84B5934521FB7725007A8CB7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934421FB7725007A8CB7 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		84B5933D21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
 		84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavBarStackView.swift; sourceTree = "<group>"; };
 		84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		84B5934421FB7725007A8CB7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				84B5933D21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift */,
 				84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */,
+				84B5934421FB7725007A8CB7 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				84B5934021FAE367007A8CB7 /* TopNavBarStackView.swift in Sources */,
 				84B5934321FAE5A7007A8CB7 /* Extension+UIView.swift in Sources */,
 				84B5933E21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift in Sources */,
+				84B5934521FB7725007A8CB7 /* CardView.swift in Sources */,
 				84B592FE21F98370007A8CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
