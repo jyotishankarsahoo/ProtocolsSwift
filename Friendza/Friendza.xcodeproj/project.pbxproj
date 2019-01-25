@@ -14,6 +14,9 @@
 		84B5930821F98372007A8CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5930621F98372007A8CB7 /* LaunchScreen.storyboard */; };
 		84B5931321F98373007A8CB7 /* FriendzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5931221F98373007A8CB7 /* FriendzaTests.swift */; };
 		84B5931E21F98373007A8CB7 /* FriendzaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5931D21F98373007A8CB7 /* FriendzaUITests.swift */; };
+		84B5933E21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5933D21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift */; };
+		84B5934021FAE367007A8CB7 /* TopNavBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */; };
+		84B5934321FAE5A7007A8CB7 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		84B5931921F98373007A8CB7 /* FriendzaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendzaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5931D21F98373007A8CB7 /* FriendzaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendzaUITests.swift; sourceTree = "<group>"; };
 		84B5931F21F98373007A8CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B5933D21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
+		84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavBarStackView.swift; sourceTree = "<group>"; };
+		84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		84B592FC21F98370007A8CB7 /* Friendza */ = {
 			isa = PBXGroup;
 			children = (
+				84B5934121FAE57A007A8CB7 /* Extension */,
+				84B5933C21FADA59007A8CB7 /* Views */,
 				84B592FD21F98370007A8CB7 /* AppDelegate.swift */,
 				84B592FF21F98370007A8CB7 /* ViewController.swift */,
 				84B5930121F98370007A8CB7 /* Main.storyboard */,
@@ -123,6 +131,23 @@
 				84B5931F21F98373007A8CB7 /* Info.plist */,
 			);
 			path = FriendzaUITests;
+			sourceTree = "<group>";
+		};
+		84B5933C21FADA59007A8CB7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84B5933D21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift */,
+				84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84B5934121FAE57A007A8CB7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B5930021F98370007A8CB7 /* ViewController.swift in Sources */,
+				84B5934021FAE367007A8CB7 /* TopNavBarStackView.swift in Sources */,
+				84B5934321FAE5A7007A8CB7 /* Extension+UIView.swift in Sources */,
+				84B5933E21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift in Sources */,
 				84B592FE21F98370007A8CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
