@@ -8,11 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
 
     let topStackView = TopNavBarStackView()
     let bottomStackView = HomeBottomControlsStackView()
     let cardDeckView = UIView()
+
+    let userViewModel: [CardViewModel] = {
+        let models: [CardViewModelConvertable] = [User(name: "Christ", age: 18, occupation: "Radio DJ", imageString: "lady5c"),
+                      User(name: "Lessly", age: 21, occupation: "Teacher", imageString: "lady4c"),
+                      Advertisement(title: "Welcome to MVVM", brand: "Self Learning", posterPhotoName: "slide_out_menu_poster")]
+        return models.map({ $0.toCardViewModel()})
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +28,13 @@ class ViewController: UIViewController {
     }
 
     fileprivate func setupDummyCards() {
-        let cardView = CardView()
-        cardDeckView.addSubview(cardView)
-        cardView.fillInSuperView()
+        userViewModel.forEach { (viewModel) in
+            let cardView = CardView()
+            cardView.viewModel = viewModel
+            cardDeckView.addSubview(cardView)
+            cardView.fillInSuperView()
+        }
+
     }
 
     fileprivate func setupLayout() {

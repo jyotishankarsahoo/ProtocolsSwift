@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		84B592FE21F98370007A8CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B592FD21F98370007A8CB7 /* AppDelegate.swift */; };
-		84B5930021F98370007A8CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B592FF21F98370007A8CB7 /* ViewController.swift */; };
 		84B5930321F98370007A8CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5930121F98370007A8CB7 /* Main.storyboard */; };
 		84B5930521F98372007A8CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B5930421F98372007A8CB7 /* Assets.xcassets */; };
 		84B5930821F98372007A8CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5930621F98372007A8CB7 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,10 @@
 		84B5934021FAE367007A8CB7 /* TopNavBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */; };
 		84B5934321FAE5A7007A8CB7 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */; };
 		84B5934521FB7725007A8CB7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934421FB7725007A8CB7 /* CardView.swift */; };
+		84B5934C21FBE0E0007A8CB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934B21FBE0E0007A8CB7 /* User.swift */; };
+		84B5934F21FCC007007A8CB7 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5934E21FCC007007A8CB7 /* CardViewModel.swift */; };
+		84B5935121FCC333007A8CB7 /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5935021FCC333007A8CB7 /* Advertisement.swift */; };
+		84B5935321FCC7BF007A8CB7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5935221FCC7BF007A8CB7 /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 /* Begin PBXFileReference section */
 		84B592FA21F98370007A8CB7 /* Friendza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B592FD21F98370007A8CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B592FF21F98370007A8CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84B5930221F98370007A8CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84B5930421F98372007A8CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84B5930721F98372007A8CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		84B5933F21FAE367007A8CB7 /* TopNavBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavBarStackView.swift; sourceTree = "<group>"; };
 		84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		84B5934421FB7725007A8CB7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		84B5934B21FBE0E0007A8CB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84B5934E21FCC007007A8CB7 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		84B5935021FCC333007A8CB7 /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
+		84B5935221FCC7BF007A8CB7 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +111,12 @@
 		84B592FC21F98370007A8CB7 /* Friendza */ = {
 			isa = PBXGroup;
 			children = (
-				84B5934121FAE57A007A8CB7 /* Extension */,
+				84B5934A21FBE0C1007A8CB7 /* Model */,
+				84B5934D21FCBF87007A8CB7 /* ViewModel */,
 				84B5933C21FADA59007A8CB7 /* Views */,
+				84B5935421FCC9A4007A8CB7 /* Controller */,
+				84B5934121FAE57A007A8CB7 /* Extension */,
 				84B592FD21F98370007A8CB7 /* AppDelegate.swift */,
-				84B592FF21F98370007A8CB7 /* ViewController.swift */,
 				84B5930121F98370007A8CB7 /* Main.storyboard */,
 				84B5930421F98372007A8CB7 /* Assets.xcassets */,
 				84B5930621F98372007A8CB7 /* LaunchScreen.storyboard */,
@@ -151,6 +159,31 @@
 				84B5934221FAE5A7007A8CB7 /* Extension+UIView.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		84B5934A21FBE0C1007A8CB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84B5934B21FBE0E0007A8CB7 /* User.swift */,
+				84B5935021FCC333007A8CB7 /* Advertisement.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84B5934D21FCBF87007A8CB7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B5934E21FCC007007A8CB7 /* CardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84B5935421FCC9A4007A8CB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84B5935221FCC7BF007A8CB7 /* HomeController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,12 +317,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B5930021F98370007A8CB7 /* ViewController.swift in Sources */,
+				84B5935321FCC7BF007A8CB7 /* HomeController.swift in Sources */,
 				84B5934021FAE367007A8CB7 /* TopNavBarStackView.swift in Sources */,
 				84B5934321FAE5A7007A8CB7 /* Extension+UIView.swift in Sources */,
 				84B5933E21FADA8F007A8CB7 /* HomeBottomControlsStackView.swift in Sources */,
+				84B5934F21FCC007007A8CB7 /* CardViewModel.swift in Sources */,
 				84B5934521FB7725007A8CB7 /* CardView.swift in Sources */,
 				84B592FE21F98370007A8CB7 /* AppDelegate.swift in Sources */,
+				84B5934C21FBE0E0007A8CB7 /* User.swift in Sources */,
+				84B5935121FCC333007A8CB7 /* Advertisement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

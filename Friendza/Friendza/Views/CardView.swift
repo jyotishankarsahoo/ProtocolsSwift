@@ -10,14 +10,29 @@ import UIKit
 
 class CardView: UIView {
     private let imageView = UIImageView(image: #imageLiteral(resourceName: "lady5c").withRenderingMode(.alwaysOriginal))
+    private let informationLabel = UILabel()
     let panThreshold: CGFloat = 100
 
+    var viewModel: CardViewModel! {
+        didSet {
+            imageView.image = UIImage(named: viewModel.imageString)
+            informationLabel.attributedText = viewModel.attributedString
+            informationLabel.textAlignment = viewModel.allignement
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 10
         clipsToBounds = true
+
         addSubview(imageView)
         imageView.fillInSuperView()
+
+        informationLabel.numberOfLines = 0
+        informationLabel.textColor = .white
+        addSubview(informationLabel)
+        informationLabel.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
+
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
     }
@@ -31,7 +46,6 @@ class CardView: UIView {
         default:
             ()
         }
-
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -59,7 +73,9 @@ class CardView: UIView {
                 }
         }) { (_) in
             self.transform = .identity
-            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
+            if shouldDismissCard {
+                self.removeFromSuperview()
+            }
         }
     }
 }
