@@ -15,10 +15,10 @@ class HomeController: UIViewController {
     let cardDeckView = UIView()
 
     let userViewModel: [CardViewModel] = {
-        let models: [CardViewModelConvertable] = [User(name: "Christ", age: 18, occupation: "Radio DJ", imageString: "lady5c"),
-                      User(name: "Lessly", age: 21, occupation: "Teacher", imageString: "lady4c"),
+        let models: [CardViewModelConvertable] = [User(name: "Christ", age: 18, occupation: "Radio DJ", imagesString: ["jane1", "jane2", "jane3"]),
+                      User(name: "Lessly", age: 21, occupation: "Teacher", imagesString: ["kelly1", "kelly2", "kelly3"]),
                       Advertisement(title: "Welcome to MVVM", brand: "Self Learning", posterPhotoName: "slide_out_menu_poster"),
-                      User(name: "Christ", age: 18, occupation: "Radio DJ", imageString: "lady5c")]
+                      User(name: "Christ", age: 18, occupation: "Radio DJ", imagesString: ["lady5c"])]
         return models.map({ $0.toCardViewModel()})
     }()
 

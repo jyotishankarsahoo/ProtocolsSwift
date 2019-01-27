@@ -10,8 +10,31 @@ import UIKit
 protocol CardViewModelConvertable {
     func toCardViewModel() -> CardViewModel
 }
-struct CardViewModel {
+class CardViewModel {
+
     let attributedString: NSAttributedString
-    let imageString: String
+    let imagesString: [String]
     let allignement: NSTextAlignment
+    fileprivate var imageIndex = 0 {
+        didSet {
+            let image = UIImage(named: imagesString[imageIndex])
+            imageIndexObserver?(imageIndex, image)
+        }
+    }
+
+    init(attributedString: NSAttributedString, imagesString: [String], allignement: NSTextAlignment) {
+        self.attributedString = attributedString
+        self.imagesString = imagesString
+        self.allignement = allignement
+    }
+
+    //Reactive Programming
+    var imageIndexObserver: ((Int, UIImage?) -> ())?
+
+    func goToNextPhoto() {
+        imageIndex = min(imageIndex + 1, imagesString.count - 1)
+    }
+    func goToPreviousPhoto() {
+        imageIndex = max(0, imageIndex - 1)
+    }
 }

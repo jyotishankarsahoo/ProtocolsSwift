@@ -16,6 +16,6 @@ struct Advertisement: CardViewModelConvertable {
     func toCardViewModel() -> CardViewModel {
         let attributedString = NSMutableAttributedString(string: title, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
         attributedString.append(NSMutableAttributedString(string: "\n\(brand)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-        return CardViewModel(attributedString: attributedString, imageString: posterPhotoName, allignement: .center)
+        return CardViewModel(attributedString: attributedString, imagesString: [posterPhotoName], allignement: .center)
     }
 }
