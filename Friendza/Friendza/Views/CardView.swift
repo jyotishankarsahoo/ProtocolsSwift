@@ -11,6 +11,7 @@ import UIKit
 class CardView: UIView {
     private let imageView = UIImageView(image: #imageLiteral(resourceName: "lady5c").withRenderingMode(.alwaysOriginal))
     private let informationLabel = UILabel()
+    private let gradient = CAGradientLayer()
     let panThreshold: CGFloat = 100
 
     var viewModel: CardViewModel! {
@@ -28,6 +29,8 @@ class CardView: UIView {
         addSubview(imageView)
         imageView.fillInSuperView()
 
+        addGradientLayer()
+
         informationLabel.numberOfLines = 0
         informationLabel.textColor = .white
         addSubview(informationLabel)
@@ -39,6 +42,8 @@ class CardView: UIView {
 
     @objc func handlePan(gesture: UIPanGestureRecognizer) {
         switch gesture.state {
+        case .began:
+            superview?.subviews.forEach({ $0.layer.removeAllAnimations() })
         case .changed:
             handleChanged(gesture)
         case .ended:
@@ -50,6 +55,16 @@ class CardView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    fileprivate func addGradientLayer() {
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.locations = [0.5, 1.1]
+        self.layer.addSublayer(gradient)
+    }
+
+    override func layoutSubviews() {
+        gradient.frame = self.frame
     }
 
     fileprivate func handleChanged(_ gesture: UIPanGestureRecognizer) {

@@ -17,7 +17,8 @@ class HomeController: UIViewController {
     let userViewModel: [CardViewModel] = {
         let models: [CardViewModelConvertable] = [User(name: "Christ", age: 18, occupation: "Radio DJ", imageString: "lady5c"),
                       User(name: "Lessly", age: 21, occupation: "Teacher", imageString: "lady4c"),
-                      Advertisement(title: "Welcome to MVVM", brand: "Self Learning", posterPhotoName: "slide_out_menu_poster")]
+                      Advertisement(title: "Welcome to MVVM", brand: "Self Learning", posterPhotoName: "slide_out_menu_poster"),
+                      User(name: "Christ", age: 18, occupation: "Radio DJ", imageString: "lady5c")]
         return models.map({ $0.toCardViewModel()})
     }()
 
