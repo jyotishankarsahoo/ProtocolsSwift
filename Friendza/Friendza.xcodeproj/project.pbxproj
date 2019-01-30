@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13CB486BC83C07F5F2F2C5DB /* Pods_Friendza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC821EBEB41634334269C00 /* Pods_Friendza.framework */; };
+		849DF9E8220160C4006F3D45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849DF9E7220160C4006F3D45 /* GoogleService-Info.plist */; };
 		84B592FE21F98370007A8CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B592FD21F98370007A8CB7 /* AppDelegate.swift */; };
 		84B5930321F98370007A8CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5930121F98370007A8CB7 /* Main.storyboard */; };
 		84B5930521F98372007A8CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B5930421F98372007A8CB7 /* Assets.xcassets */; };
@@ -44,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EC821EBEB41634334269C00 /* Pods_Friendza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friendza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1676DB10BF93620A378F2D09 /* Pods-Friendza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friendza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Friendza/Pods-Friendza.debug.xcconfig"; sourceTree = "<group>"; };
+		849DF9E7220160C4006F3D45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B592FA21F98370007A8CB7 /* Friendza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B592FD21F98370007A8CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5930221F98370007A8CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		84B5935521FF8E14007A8CB7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		84B5935721FF99B1007A8CB7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		84B5935921FFB561007A8CB7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		D1ABBB35EDF928B34206655C /* Pods-Friendza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friendza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Friendza/Pods-Friendza.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CB486BC83C07F5F2F2C5DB /* Pods_Friendza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C13B6795534766FF7B95142 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1676DB10BF93620A378F2D09 /* Pods-Friendza.debug.xcconfig */,
+				D1ABBB35EDF928B34206655C /* Pods-Friendza.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84B592F121F98370007A8CB7 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +117,8 @@
 				84B5931121F98373007A8CB7 /* FriendzaTests */,
 				84B5931C21F98373007A8CB7 /* FriendzaUITests */,
 				84B592FB21F98370007A8CB7 /* Products */,
+				5C13B6795534766FF7B95142 /* Pods */,
+				DEBA139AC3109576ACFC0CF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +145,7 @@
 				84B5930421F98372007A8CB7 /* Assets.xcassets */,
 				84B5930621F98372007A8CB7 /* LaunchScreen.storyboard */,
 				84B5930921F98372007A8CB7 /* Info.plist */,
+				849DF9E7220160C4006F3D45 /* GoogleService-Info.plist */,
 			);
 			path = Friendza;
 			sourceTree = "<group>";
@@ -195,6 +214,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		DEBA139AC3109576ACFC0CF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EC821EBEB41634334269C00 /* Pods_Friendza.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B5932221F98373007A8CB7 /* Build configuration list for PBXNativeTarget "Friendza" */;
 			buildPhases = (
+				DC302DF60DBA423AFE6B4CF2 /* [CP] Check Pods Manifest.lock */,
 				84B592F621F98370007A8CB7 /* Sources */,
 				84B592F721F98370007A8CB7 /* Frameworks */,
 				84B592F821F98370007A8CB7 /* Resources */,
+				943573AB86BE036E87D04202 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +331,7 @@
 				84B5930821F98372007A8CB7 /* LaunchScreen.storyboard in Resources */,
 				84B5930521F98372007A8CB7 /* Assets.xcassets in Resources */,
 				84B5930321F98370007A8CB7 /* Main.storyboard in Resources */,
+				849DF9E8220160C4006F3D45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +350,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		943573AB86BE036E87D04202 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Friendza/Pods-Friendza-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Friendza/Pods-Friendza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC302DF60DBA423AFE6B4CF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Friendza-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84B592F621F98370007A8CB7 /* Sources */ = {
@@ -510,6 +605,7 @@
 		};
 		84B5932321F98373007A8CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1676DB10BF93620A378F2D09 /* Pods-Friendza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +624,7 @@
 		};
 		84B5932421F98373007A8CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1ABBB35EDF928B34206655C /* Pods-Friendza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

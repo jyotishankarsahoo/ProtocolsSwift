@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
 
 extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -70,6 +72,7 @@ class RegistrationViewController: UIViewController {
         button.layer.cornerRadius = 22
         button.backgroundColor = .lightGray
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.addTarget(self, action: #selector(registerUser), for: .touchUpInside)
         return button
     }()
     lazy var verticalStackView: UIStackView = {
@@ -121,6 +124,19 @@ class RegistrationViewController: UIViewController {
 
     //MARK: - fileprivate Outlet Actions
 
+    @objc fileprivate func registerUser() {
+        self.handleTapToDismiss()
+        guard let email = viewModel.email, let password = viewModel.password else
+        { return }
+        Auth.auth().createUser(withEmail: email, password: password) { [unowned self](result, error) in
+            if let error = error {
+                self.showHUDWithError(error: error)
+                return
+            }
+            print("Registered User is :", result?.user.uid ?? "")
+        }
+    }
+
     @objc fileprivate func handlePhotoSelection() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -154,12 +170,18 @@ class RegistrationViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: { self.view.transform = .identity })
     }
 
-    @objc fileprivate func handleTap() {
+    @objc fileprivate func handleTapToDismiss() {
         view.endEditing(true) // Dismiss keyboard
     }
 
     //MARK: - fileprivate
-
+    fileprivate func showHUDWithError(error: Error) {
+        let progressHUD = JGProgressHUD(style: .dark)
+        progressHUD.textLabel.text = "Registration Failed"
+        progressHUD.detailTextLabel.text = error.localizedDescription
+        progressHUD.show(in: view)
+        progressHUD.dismiss(afterDelay: 3)
+    }
     fileprivate func setupViewModelPropertyObserver() {
         viewModel.shouldEnableRegisterButton = { [unowned self] (isvalid) in
             if isvalid {
@@ -198,7 +220,7 @@ class RegistrationViewController: UIViewController {
     }
 
     fileprivate func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapToDismiss))
         view.addGestureRecognizer(tapGesture)
     }
 
