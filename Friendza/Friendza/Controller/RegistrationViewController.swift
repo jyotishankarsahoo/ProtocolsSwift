@@ -123,17 +123,14 @@ class RegistrationViewController: UIViewController {
     }
 
     //MARK: - fileprivate Outlet Actions
+    private var registerProgressHUD = JGProgressHUD(style: .dark)
 
     @objc fileprivate func registerUser() {
         self.handleTapToDismiss()
-        guard let email = viewModel.email, let password = viewModel.password else
-        { return }
-        Auth.auth().createUser(withEmail: email, password: password) { [unowned self](result, error) in
+        viewModel.performRegistration { [weak self](error) in
             if let error = error {
-                self.showHUDWithError(error: error)
-                return
+                self?.showHUDWithError(error: error)
             }
-            print("Registered User is :", result?.user.uid ?? "")
         }
     }
 
@@ -196,6 +193,14 @@ class RegistrationViewController: UIViewController {
         }
         viewModel.userImageObserver = { [unowned self] (image) in
             self.selectImageButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        viewModel.registrationObserver = { [unowned self] (isRegistering) in
+            if let registering =  isRegistering, registering == false {
+                self.registerProgressHUD.dismiss()
+            } else {
+                self.registerProgressHUD.textLabel.text = "Registering"
+                self.registerProgressHUD.show(in: self.view)
+            }
         }
     }
 
