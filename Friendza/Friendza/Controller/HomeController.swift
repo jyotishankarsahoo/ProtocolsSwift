@@ -7,39 +7,73 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
 
 class HomeController: UIViewController {
 
     let topStackView = TopNavBarStackView()
-    let bottomStackView = HomeBottomControlsStackView()
+    let bottomControlStackView = HomeBottomControlsStackView()
     let cardDeckView = UIView()
 
-    let userViewModel: [CardViewModel] = {
-        let models: [CardViewModelConvertable] = [User(name: "Christ", age: 18, occupation: "Radio DJ", imagesString: ["jane1", "jane2", "jane3"]),
-                      User(name: "Lessly", age: 21, occupation: "Teacher", imagesString: ["kelly1", "kelly2", "kelly3"]),
-                      Advertisement(title: "Welcome to MVVM", brand: "Self Learning", posterPhotoName: "slide_out_menu_poster"),
-                      User(name: "Christ", age: 18, occupation: "Radio DJ", imagesString: ["lady5c"])]
-        return models.map({ $0.toCardViewModel()})
+    var userViewModel = [CardViewModel]()
+    var lastFetchedUser: User?
+    lazy var refereshingProggressHUD: JGProgressHUD = {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Refreshing"
+        return hud
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        setupDummyCards()
+        bottomControlStackView.refreshButton.addTarget(self, action: #selector(handleRefresh), for: .touchUpInside)
+        setupFireStoreUserCards()
+        fetchUserInfoFromFireBase()
+    }
+    fileprivate func fetchUserInfoFromFireBase() {
+        refereshingProggressHUD.show(in: view)
+        let query = Firestore.firestore().collection("users").order(by: "uid").start(after: [lastFetchedUser?.uid ?? ""]).limit(to: 1)
+        query.getDocuments { (querySnapShot, error) in
+            self.refereshingProggressHUD.dismiss()
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            querySnapShot?.documents.forEach({ (documentSnapShot) in
+                let userDictionary = documentSnapShot.data()
+                let user = User(with: userDictionary)
+                self.userViewModel.append(user.toCardViewModel())
+                self.lastFetchedUser = user
+                self.setupCardsOnView(model: user)
+                //self.setupFireStoreUserCards()
+            })
+        }
     }
 
-    fileprivate func setupDummyCards() {
+    fileprivate func setupCardsOnView(model: User) {
+        let cardView = CardView()
+        cardView.viewModel = model.toCardViewModel()
+        cardDeckView.addSubview(cardView)
+        cardDeckView.sendSubviewToBack(cardView)
+        cardView.fillInSuperView()
+    }
+
+    @objc fileprivate func handleRefresh() {
+        fetchUserInfoFromFireBase()
+    }
+    fileprivate func setupFireStoreUserCards() {
         userViewModel.forEach { (viewModel) in
             let cardView = CardView()
             cardView.viewModel = viewModel
             cardDeckView.addSubview(cardView)
             cardView.fillInSuperView()
         }
-
     }
 
     fileprivate func setupLayout() {
-        let overallStackview = UIStackView(arrangedSubviews: [topStackView, cardDeckView, bottomStackView])
+        view.backgroundColor = .white
+        let overallStackview = UIStackView(arrangedSubviews: [topStackView, cardDeckView, bottomControlStackView])
         overallStackview.axis = .vertical
         view.addSubview(overallStackview)
         overallStackview.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)

@@ -10,18 +10,25 @@ import UIKit
 
 class HomeBottomControlsStackView: UIStackView {
 
+    static func createButton(with image: UIImage) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+        return button
+    }
+
+    let refreshButton: UIButton = createButton(with: #imageLiteral(resourceName: "refresh_circle"))
+    let unlikeButton: UIButton = createButton(with: #imageLiteral(resourceName: "dismiss_circle"))
+    let likeButton: UIButton = createButton(with: #imageLiteral(resourceName: "super_like_circle"))
+    let superLikeButton: UIButton = createButton(with: #imageLiteral(resourceName: "like_circle"))
+    let specialButton: UIButton = createButton(with: #imageLiteral(resourceName: "boost_circle"))
+
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         distribution = .fillEqually
         heightAnchor.constraint(equalToConstant: 80).isActive = true
-        let buttons = [#imageLiteral(resourceName: "refresh_circle"), #imageLiteral(resourceName: "dismiss_circle"), #imageLiteral(resourceName: "super_like_circle"), #imageLiteral(resourceName: "like_circle"), #imageLiteral(resourceName: "boost_circle")].map { (image) -> UIView in
-            let button = UIButton(type: .system)
-            button.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
-            return button
-        }
-
-        buttons.forEach { (view) in
-            addArrangedSubview(view)
+        [refreshButton, unlikeButton, likeButton, superLikeButton, specialButton].forEach { (button) in
+            addArrangedSubview(button)
         }
     }
 

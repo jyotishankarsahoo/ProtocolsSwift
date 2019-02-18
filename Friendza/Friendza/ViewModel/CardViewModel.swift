@@ -17,8 +17,8 @@ class CardViewModel {
     let allignement: NSTextAlignment
     fileprivate var imageIndex = 0 {
         didSet {
-            let image = UIImage(named: imagesString[imageIndex])
-            imageIndexObserver?(imageIndex, image)
+            let imageURL = imagesString[imageIndex]
+            imageIndexObserver?(imageIndex, imageURL)
         }
     }
 
@@ -29,7 +29,7 @@ class CardViewModel {
     }
 
     //Reactive Programming
-    var imageIndexObserver: ((Int, UIImage?) -> ())?
+    var imageIndexObserver: ((Int, String?) -> ())?
 
     func goToNextPhoto() {
         imageIndex = min(imageIndex + 1, imagesString.count - 1)
